@@ -51,6 +51,8 @@ class Motor(object):
 
         if speed > MAX_SPEED:
             speed = MAX_SPEED
+        if speed < -MAX_SPEED:
+            speed = -MAX_SPEED
 
         io_init()
         wiringpi.digitalWrite(self.dir_pin, dir_value)
